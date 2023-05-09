@@ -208,7 +208,7 @@
                         bindings = <
    &kp Q            &kp W           &kp E           &kp R           &kp T           &kp Y       &kp U       &kp I       &kp O       &kp P
    &mt LSHIFT A     &kp S           &kp D           &kp F           &kp G           &kp H       &kp J       &kp K       &kp L       &mt LSHIFT SEMI
-   &mt LCTRL Z  &   kp X            &kp C           &kp V           &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &mt LCTRL FSLH
+   &mt LCTRL Z      &kp X           &kp C           &kp V           &kp B           &kp N       &kp M       &kp COMMA   &kp DOT     &mt LCTRL FSLH
                                                     &mt LALT TAB    &lt SYM SPACE   &lt NUM RET &kp BSPC
                         >;
 		label = "BASE";

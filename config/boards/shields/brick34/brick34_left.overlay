@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include "tenaxxiao.dtsi"
+#include "brick34.dtsi"
 
 &kscan0 {
 	col-gpios

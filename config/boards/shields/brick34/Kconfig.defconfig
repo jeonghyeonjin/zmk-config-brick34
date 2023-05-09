@@ -1,7 +1,7 @@
-if SHIELD_TENAXXIAO_LEFT
+if SHIELD_BRICK34_LEFT
 
 config ZMK_KEYBOARD_NAME
-	default "tenaxXIAO"
+	default "brick34 Lest"
 
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
 	default y
@@ -9,15 +9,15 @@ config ZMK_SPLIT_BLE_ROLE_CENTRAL
 endif
 
 
-if SHIELD_TENAXXIAO_RIGHT
+if SHIELD_BRICK34_RIGHT
 
 config ZMK_KEYBOARD_NAME
-	default "tenaxxiao Right"
+	default "brick34 Right"
 	
 endif
 
 
-if SHIELD_TENAXXIAO_LEFT || SHIELD_TENAXXIAO_RIGHT
+if SHIELD_BRICK34_LEFT || SHIELD_BRICK34_RIGHT
 
 config ZMK_SPLIT
 	default y

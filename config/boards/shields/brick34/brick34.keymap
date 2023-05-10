@@ -195,6 +195,11 @@
 			key-positions = <28 29>;
 			bindings = <&kp BSLH>;
 		};
+		combo_esc {
+			timeout-ms = <25>;
+			key-positions = <3 4>;
+			bindings = <&kp ESC>;
+		};
     };
         keymap {
                 compatible = "zmk,keymap";
@@ -217,8 +222,8 @@
 
                         bindings = <
    &kp N1		    &kp N2		    &kp N3			&kp N4		    &kp N5		    &kp N6	    &kp	N7		&kp N8		&kp N9		&kp N0
-   &kp MINUS 	    &kp EQUAL	&kp BSLH	        &kp LBRC   	    &kp RBRC        &kp HOME	&kp LEFT	&kp UP  	&kp RIGHT	&kp PG_UP
-   &kp UNDER	    &kp PLUS	&kp PIPE	        &kp LBKT 	    &kp RBKT        &kp END	    &trans	    &kp DOWN	&trans	    &kp PG_DN
+   &mt LSHIFT MINUS	&kp EQUAL		&kp BSLH	    &kp LBRC   	    &kp RBRC        &kp HOME	&kp LEFT	&kp UP  	&kp RIGHT	&mt LSHIFT PG_UP
+   &mt LCTRL UNDER	&kp PLUS		&kp PIPE	    &kp LBKT 	    &kp RBKT        &kp END	    &trans	    &kp DOWN	&trans	    &mt LCTRL PG_DN
                	                                    &trans          &mo FNC         &trans      &kp DEL
                         >;
 		label = "NUM";
@@ -228,8 +233,8 @@
 
                         bindings = <
    &kp EXCL  	    &kp AT 		    &kp HASH  		&kp DLLR  	    &kp PRCNT       &kp CARET	&kp AMPS	&kp ASTRK	&kp LPAR	&kp RPAR
-   &sk LALT	        &sk LGUI	    &sk LSHIFT		&sk LCTRL	    &kp RALT 	    &kp MINUS 	&kp EQUAL	&kp BSLH	&kp LBRC   	&kp RBRC
-   &kp PRINTSCREEN  &trans 		    &trans 		    &trans   	    &kp GRAVE 		&kp UNDER	&kp PLUS	&kp PIPE	&kp LBKT 	&kp RBKT
+   &sk LALT	        &sk LGUI	    &sk LSHIFT		&sk LCTRL	    &kp RALT 	    &kp MINUS 	&kp EQUAL	&kp BSLH	&kp LBRC   	&mt LSHIFT RBRC
+   &kp PRINTSCREEN  &trans 		    &kp ESC  		&kp GRAVE    	&kp TILDE 		&kp UNDER	&kp PLUS	&kp PIPE	&kp LBKT 	&mt LCTRL RBKT
         	                                        &trans          &trans          &mo FNC     &kp DEL 
                         >;
 		label = "SYM";

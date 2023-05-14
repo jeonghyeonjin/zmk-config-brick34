@@ -233,7 +233,7 @@
         	                                        &trans          &trans          &mo FNC     		&kp DEL 
                         >;
 		label = "SYM";
-// 		};
+		};
 // 		        pad_layer {
 
 //                         bindings = <

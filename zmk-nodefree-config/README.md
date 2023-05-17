@@ -119,7 +119,7 @@ the "lowest" one ([see here for details](https://zmk.dev/docs/features/keymaps#l
 
 #### Example usage
 ```C++
-ZMK_LAYER(default_layer,
+ZMK_KEYMAP(default_layer,
      // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
           &kp Q         &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y         &kp SQT
      // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -283,8 +283,7 @@ The creates "umlaut" pairs that can be added to the keymap using `&de_ae`, `&de_
 * On Windows and macOS there are additional requirements for unicode input to work. On
   Windows, one must install [WinCompose](https://github.com/samhocevar/wincompose) for
   full support (or use Win-Alt-Codes for limited support in select software). On
-  macOS one must enable unicode input in the system preferences, by selecting 
-  `Unicode Hex Input` as input source.
+  macOS one must enable unicode input in the system preferences.
 
 ### International characters
 
@@ -391,10 +390,6 @@ ZMK_BEHAVIOR(hmr, hold_tap,  // right-hand HRMs
 
 ## Changelog
 
-* **4/23/2023:** Support for dynamic-macros, requires PR #1351 (added by 
-  [@theol0403](https://github.com/theol0403))
-* **3/7/2023:** Keypos definitions for 44-key boards like Jian/Jorne (added by 
-  [@alparo](https://github.com/alparo)) and for Kinesis Advantage 360 Pro
 * **1/3/2023:** Optional `TIMEOUT` argument for `ZMK_COMBO` subsuming the now
   depreciated `ZMK_COMBO_ADV`
 * **1/2/2023:** Optional sensor-bindings argument to `ZMK_LAYER` + keypos definitions

@@ -5,10 +5,10 @@ manifest:
     - name: urob
       url-base: https://github.com/urob
     - name: jeonghyeonjin
-      url-base: https://github.com/jeonghyeonjin
+      url-base: https://github.com/jeonghyeonjin/zmk-config-brick34
   projects:
     - name: zmk
-      remote: jeonghyeonjin
+      remote: jeonghyeonjin/zmk-config-brick34
       revision: main
       import: app/west.yml
   self:

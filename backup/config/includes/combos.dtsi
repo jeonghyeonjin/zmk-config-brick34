@@ -1,4 +1,4 @@
-#include "../../zmk-nodefree-config/keypos_def/keypos_36keys.h"
+#include "../../zmk-nodefree-config/keypos_def/keypos_34keys.h"
 
 #define COMBO_TERM_FAST 35
 #define COMBO_TERM_SLOW 40
@@ -87,15 +87,6 @@
       key-positions = <LM1 RM1>;
       layers = <BASE BASE_QWERTY>;
       bindings = <&caps_word_capslock >;
-    };
-
-    combo_return {
-      timeout-ms = <COMBO_TERM_FAST>;
-      global-quick-tap-ms = <COMBO_GLOBAL_QUICKTAP>;
-
-      key-positions = <LH2 LH1 LH0>;
-      layers = <BASE BASE_QWERTY NAV NUM SYM>;
-      bindings = <&kp RET>;
     };
 
     combo_bspc {

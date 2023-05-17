@@ -8,7 +8,7 @@ manifest:
       url-base: https://github.com/zmk-config-brick34
   projects:
     - name: zmk
-      remote: zmk-config-brick34
+      remote: zmkfirmware
       revision: main
       import: app/west.yml
   self:

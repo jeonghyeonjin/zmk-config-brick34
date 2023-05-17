@@ -4,11 +4,9 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
-    - name: jeonghyeonjin
-      url-base: https://github.com/jeonghyeonjin/zmk-config-brick34
   projects:
     - name: zmk
-      remote: jeonghyeonjin/zmk-config-brick34
+      remote: urob
       revision: main
       import: app/west.yml
   self:

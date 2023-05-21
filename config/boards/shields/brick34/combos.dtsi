@@ -7,50 +7,49 @@
   ╰───────────╮ 30  31 │ │ 32  33 ╭───────────╯
               ╰────────╯ ╰────────╯            */
 
-#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP) \
+#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM) \
         combo_##NAME { \
             timeout-ms = <TERM>; \
             bindings = <BINDINGS>; \
             key-positions = <KEYPOS>; \
             layers = <LAYERS>; \
-            global-quick-tap-ms = <QUICKTAP>; \
         };
 
 / {
     combos {
         compatible = "zmk,combos";
 
-COMBO(tab,    &kp TAB,      0  1, BASE, 40, 100)
-COMBO(tab2,   &kp TAB,      1  2, BASE, 40, 100)
-COMBO(undo,   &kp LC(Z),   21 22, BASE, 40, 100)
-COMBO(1,      &kp N1,       0 10, BASE, 40, 100)
-COMBO(2,      &kp N2,       1 11, BASE, 40, 100)
-COMBO(3,      &kp N3,       2 12, BASE, 40, 100)
-COMBO(4,      &kp N4,       3 13, BASE, 40, 100)
-COMBO(5,      &kp N5,       4 14, BASE, 40, 100)
-COMBO(6,      &kp N6,       5 15, BASE, 40, 100)
-COMBO(7,      &kp N7,       6 16, BASE, 40, 100)
-COMBO(8,      &kp N8,       7 17, BASE, 40, 100)
-COMBO(9,      &kp N9,       8 18, BASE, 40, 100)
-COMBO(0,      &kp N0,       9 19, BASE, 40, 100)
-COMBO(minus,  &kp MINUS,   15 16, BASE, 40, 100)
-COMBO(minus2, &kp MINUS,   16 26, BASE, 40, 100)
-COMBO(under,  &kp UNDER,   15 25, BASE, 40, 100)
+COMBO(tab,    &kp TAB,      0  1, BASE, 40)
+COMBO(tab2,   &kp TAB,      1  2, BASE, 40)
+COMBO(undo,   &kp LC(Z),   21 22, BASE, 40)
+COMBO(1,      &kp N1,       0 10, BASE, 40)
+COMBO(2,      &kp N2,       1 11, BASE, 40)
+COMBO(3,      &kp N3,       2 12, BASE, 40)
+COMBO(4,      &kp N4,       3 13, BASE, 40)
+COMBO(5,      &kp N5,       4 14, BASE, 40)
+COMBO(6,      &kp N6,       5 15, BASE, 40)
+COMBO(7,      &kp N7,       6 16, BASE, 40)
+COMBO(8,      &kp N8,       7 17, BASE, 40)
+COMBO(9,      &kp N9,       8 18, BASE, 40)
+COMBO(0,      &kp N0,       9 19, BASE, 40)
+COMBO(minus,  &kp MINUS,   15 16, BASE, 40)
+COMBO(minus2, &kp MINUS,   16 26, BASE, 40)
+COMBO(under,  &kp UNDER,   15 25, BASE, 40)
 
-COMBO(bslh,   &kp BSLH,    28 29, BASE, 40, 100)
-COMBO(bslh2,  &kp BSLH,    17 27, BASE, 40, 100)
-COMBO(sqt,    &kp SQT,     17 18, BASE, 40, 100)
-COMBO(sqt2,   &kp SQT,     18 28, BASE, 40, 100)
-COMBO(equal,  &kp EQUAL,   25 26, BASE, 40, 100)
-COMBO(equal2, &kp EQUAL,   13 23, BASE, 40, 100)
-COMBO(plus,   &kp PLUS,    14 24, BASE, 40, 100)
-COMBO(lpar,   &kp LPAR,     2  3, BASE, 40, 100)
-COMBO(lbrc,   &kp LBRC,    12 13, BASE, 40, 100)
-COMBO(lbkt,   &kp LBKT,    22 23, BASE, 40, 100)
-COMBO(rpar,   &kp RPAR,     6  7, BASE, 40, 100)
-COMBO(rbrc,   &kp RBRC,    16 17, BASE, 40, 100)
-COMBO(rbkt,   &kp RBKT,    26 27, BASE, 40, 100)
+COMBO(bslh,   &kp BSLH,    28 29, BASE, 40)
+COMBO(bslh2,  &kp BSLH,    17 27, BASE, 40)
+COMBO(sqt,    &kp SQT,     17 18, BASE, 40)
+COMBO(sqt2,   &kp SQT,     18 28, BASE, 40)
+COMBO(equal,  &kp EQUAL,   25 26, BASE, 40)
+COMBO(equal2, &kp EQUAL,   13 23, BASE, 40)
+COMBO(plus,   &kp PLUS,    14 24, BASE, 40)
+COMBO(lpar,   &kp LPAR,     2  3, BASE, 40)
+COMBO(lbrc,   &kp LBRC,    12 13, BASE, 40)
+COMBO(lbkt,   &kp LBKT,    22 23, BASE, 40)
+COMBO(rpar,   &kp RPAR,     6  7, BASE, 40)
+COMBO(rbrc,   &kp RBRC,    16 17, BASE, 40)
+COMBO(rbkt,   &kp RBKT,    26 27, BASE, 40)
 
-COMBO(esc,    &kp ESC,      3  4, BASE, 40, 100)
+COMBO(esc,    &kp ESC,      3  4, BASE, 40)
     };
 };

@@ -2,6 +2,12 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#ifdef EXTERNAL_POWER
+#    include <dt-bindings/zmk/ext_power.h>
+#endif
+#ifdef MOUSE_KEYS
+#    include <dt-bindings/zmk/mouse.h>
+#endif
 
 // Layer definitions
     #define BASE 0
@@ -11,6 +17,13 @@
     #define FNC 4
 // -----------------
 
+// Desktop and tab navigation shortcuts
+#define D_LT   LC(LG(LEFT))
+#define D_RT   LC(LG(RIGHT))
+#define TAB_RT LC(TAB)
+#define TAB_LT LC(LS(TAB))
+
+
 // Key position groups
 #define KEYS_L 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24
 #define KEYS_R 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29
@@ -18,6 +31,12 @@
 // -----------------
 
 #define QUICK_TAP_MS 175
+
+#include "combos.dtsi"
+
+#ifdef MOUSE_KEYS
+#    include "mouse.dtsi"
+#endif
 
 &mt {
   quick-tap-ms = <80>;
@@ -105,160 +124,6 @@
 					bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
 				};
 		};
-
-    combos {
-        compatible = "zmk,combos";
-		combo_tab {
-			timeout-ms = <25>;
-			key-positions = <0 1>;
-			bindings = <&kp TAB>;
-		};
-		combo_tab2 {
-			timeout-ms = <25>;
-			key-positions = <1 2>;
-			bindings = <&kp TAB>;
-		};
-		combo_undo {
-			timeout-ms = <25>;
-			key-positions = <21 22>;
-			bindings = <&kp LC(Z)>;
-		};
-		combo_1 {
-			timeout-ms = <40>;
-			key-positions = <0 10>;
-			bindings = <&kp N1>;
-		};
-		combo_2 {
-			timeout-ms = <40>;
-			key-positions = <1 11>;
-			bindings = <&kp N2>;
-		};
-		combo_3 {
-			timeout-ms = <40>;
-			key-positions = <2 12>;
-			bindings = <&kp N3>;
-		};
-		combo_4 {
-			timeout-ms = <40>;
-			key-positions = <3 13>;
-			bindings = <&kp N4>;
-		};
-		combo_5 {
-			timeout-ms = <40>;
-			key-positions = <4 14>;
-			bindings = <&kp N5>;
-		};
-		combo_6 {
-			timeout-ms = <40>;
-			key-positions = <5 15>;
-			bindings = <&kp N6>;
-		};
-		combo_7 {
-			timeout-ms = <40>;
-			key-positions = <6 16>;
-			bindings = <&kp N7>;
-		};
-		combo_8 {
-			timeout-ms = <40>;
-			key-positions = <7 17>;
-			bindings = <&kp N8>;
-		};
-		combo_9 {
-			timeout-ms = <40>;
-			key-positions = <8 18>;
-			bindings = <&kp N9>;
-		};
-		combo_0 {
-			timeout-ms = <40>;
-			key-positions = <9 19>;
-			bindings = <&kp N0>;
-		};
-		combo_minus {
-			timeout-ms = <25>;
-			key-positions = <15 16>;
-			bindings = <&kp MINUS>;
-		};
-		combo_minus2 {
-			timeout-ms = <40>;
-			key-positions = <16 26>;
-			bindings = <&kp MINUS>;
-		};
-		combo_under {
-			timeout-ms = <40>;
-			key-positions = <15 25>;
-			bindings = <&kp UNDER>;
-		};
-		combo_bslh2 {
-			timeout-ms = <40>;
-			key-positions = <17 27>;
-			bindings = <&kp BSLH>;
-		};
-		combo_sqt2 {
-			timeout-ms = <40>;
-			key-positions = <18 28>;
-			bindings = <&kp SQT>;
-		};
-		combo_equal {
-			timeout-ms = <25>;
-			key-positions = <25 26>;
-			bindings = <&kp EQUAL>;
-		};
-		combo_equal2 {
-			timeout-ms = <40>;
-			key-positions = <13 23>;
-			bindings = <&kp EQUAL>;
-		};
-		combo_plus {
-			timeout-ms = <40>;
-			key-positions = <14 24>;
-			bindings = <&kp PLUS>;
-		};
-		combo_lpar {
-			timeout-ms = <25>;
-			key-positions = <2 3>;
-			bindings = <&kp LPAR>;
-		};
-		combo_lbrc {
-			timeout-ms = <25>;
-			key-positions = <12 13>;
-			bindings = <&kp LBRC>;
-		};
-		combo_lbkt {
-			timeout-ms = <25>;
-			key-positions = <22 23>;
-			bindings = <&kp LBKT>;
-		};
-		combo_rpar {
-			timeout-ms = <25>;
-			key-positions = <6 7>;
-			bindings = <&kp RPAR>;
-		};
-		combo_rbrc {
-			timeout-ms = <25>;
-			key-positions = <16 17>;
-			bindings = <&kp RBRC>;
-		};
-		combo_rbkt {
-			timeout-ms = <25>;
-			key-positions = <26 27>;
-			bindings = <&kp RBKT>;
-		};
-		combo_sqt {
-			timeout-ms = <25>;
-			key-positions = <17 18>;
-			bindings = <&kp SQT>;
-		};
-		combo_bslh {
-			timeout-ms = <25>;
-			key-positions = <28 29>;
-			bindings = <&kp BSLH>;
-		};
-		combo_esc {
-			timeout-ms = <25>;
-			key-positions = <3 4>;
-			bindings = <&kp ESC>;
-		};
-    };
         keymap {
                 compatible = "zmk,keymap";
 
@@ -270,7 +135,7 @@
 //                         | LWR30 | ENT31 |   | SPC32 | RSE33  |
                         bindings = <
    &kp Q            &kp W           &kp E           &kp R           &kp T           &kp Y       		&kp U       		&kp I       	&kp O       		&kp P
-   &mt LSHIFT A     &mt LALT S      &mt LGUI D      &kp F           &kp G           &kp H       		&kp J       		&mt LGUI K  	&mt LALT L  		&mt LSHIFT SEMI
+   &mt LSHIFT A     &aml LALT S     &aml LGUI D     &kp F           &kp G           &kp H       		&kp J       		&amr LGUI K  	&amr LALT L  		&mt LSHIFT SEMI
    &mt LCTRL Z      &kp X           &kp C           &kp V           &kp B           &kp N       		&mt MINUS M 		&mt EQUAL COMMA &mt EXCL DOT		&mt LCTRL FSLH
                                                     &lt PAD TAB    &lt SYM SPACE   &lt NUM RET 			&kp BSPC
                         >;

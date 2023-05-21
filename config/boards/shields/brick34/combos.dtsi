@@ -1,0 +1,76 @@
+/*                KEY POSITIONS
+
+  ╭────────────────────╮ ╭────────────────────╮
+  │  0   1   2   3   4 │ │  5   6   7   8   9 │
+  │ 10  11  12  13  14 │ │ 15  16  17  18  19 │
+  │ 20  21  22  23  24 │ │ 25  26  27  28  29 │
+  ╰───────────╮ 30  31 │ │ 32  33 ╭───────────╯
+              ╰────────╯ ╰────────╯            */
+
+#define COMBO(NAME, BINDINGS, KEYPOS, LAYERS, TERM, QUICKTAP) \
+        combo_##NAME { \
+            timeout-ms = <TERM>; \
+            bindings = <BINDINGS>; \
+            key-positions = <KEYPOS>; \
+            layers = <LAYERS>; \
+            global-quick-tap-ms = <QUICKTAP>; \
+        };
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+
+/* 
+COMBO(semi,   &kp SEMI,      6  7, DEF QWE, 40, 100)
+COMBO(lpar,   &kp LPAR,     12 13, DEF QWE, 40,   0)
+COMBO(rpar,   &kp RPAR,     16 17, DEF QWE, 40,   0)
+COMBO(lbkt,   &kp LBKT,     11 12, DEF QWE, 40, 100)
+COMBO(rbkt,   &kp RBKT,     17 18, DEF QWE, 40, 100)
+COMBO(tab,    &kp TAB,      11 13, DEF QWE, 40, 100)
+COMBO(bspc,   &kp BSPC,     16 18, DEF QWE, 40, 100)
+COMBO(grave,  &kp GRAVE,    22 23, DEF QWE, 40, 100)
+COMBO(tilde,  &kp TILDE,    21 22, DEF QWE, 40, 100)
+COMBO(bslh,   &kp BSLH,     26 27, DEF QWE, 40, 100)
+COMBO(pipe,   &kp PIPE,     27 28, DEF QWE, 40, 100)
+COMBO(capswd, &caps_word,   13 16, DEF QWE, 60, 100)
+*/
+
+COMBO(tab,    &kp TAB,      0  1, DEF BASE, 40, 100)
+COMBO(tab2,   &kp TAB,      1  2, DEF BASE, 40, 100)
+COMBO(undo,   &kp LC(Z),   21 22, DEF BASE, 40, 100)
+COMBO(1,      &kp N1,       0 10, DEF BASE, 40, 100)
+COMBO(2,      &kp N2,       1 11, DEF BASE, 40, 100)
+COMBO(3,      &kp N3,       2 12, DEF BASE, 40, 100)
+COMBO(4,      &kp N4,       3 13, DEF BASE, 40, 100)
+COMBO(5,      &kp N5,       4 14, DEF BASE, 40, 100)
+COMBO(6,      &kp N6,       5 15, DEF BASE, 40, 100)
+COMBO(7,      &kp N7,       6 16, DEF BASE, 40, 100)
+COMBO(8,      &kp N8,       7 17, DEF BASE, 40, 100)
+COMBO(9,      &kp N9,       8 18, DEF BASE, 40, 100)
+COMBO(0,      &kp N0,       9 19, DEF BASE, 40, 100)
+COMBO(minus,  &kp MINUS,   15 16, DEF BASE, 40, 100)
+COMBO(minus2, &kp MINUS,   16 26, DEF BASE, 40, 100)
+COMBO(under,  &kp UNDER,   15 25, DEF BASE, 40, 100)
+
+COMBO(bslh,   &kp BSLH,    28 29, DEF BASE, 40, 100)
+COMBO(bslh2,  &kp BSLH,    17 27, DEF BASE, 40, 100)
+COMBO(sqt,    &kp SQT,     17 18, DEF BASE, 40, 100)
+COMBO(sqt2,   &kp SQT,     18 28, DEF BASE, 40, 100)
+COMBO(equal,  &kp EQUAL,   25 26, DEF BASE, 40, 100)
+COMBO(equal2, &kp EQUAL,   13 23, DEF BASE, 40, 100)
+COMBO(plus,   &kp PLUS,    14 24, DEF BASE, 40, 100)
+COMBO(lpar,   &kp LPAR,     2  3, DEF BASE, 40, 100)
+COMBO(lbrc,   &kp LBRC,    12 13, DEF BASE, 40, 100)
+COMBO(lbkt,   &kp LBKT,    22 23, DEF BASE, 40, 100)
+COMBO(rpar,   &kp RPAR,     6  7, DEF BASE, 40, 100)
+COMBO(rbrc,   &kp RBRC,    16 17, DEF BASE, 40, 100)
+COMBO(rbkt,   &kp RBKT,    26 27, DEF BASE, 40, 100)
+
+COMBO(esc,    &kp ESC,      3  4, DEF BASE, 40, 100)
+
+
+#ifdef MOUSE_KEYS
+COMBO(mse_l,  &mo MSE,      31 32, DEF QWE, 100,  0)
+#endif
+    };
+};

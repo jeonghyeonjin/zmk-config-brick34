@@ -38,6 +38,63 @@
 };
 
 / {
+	behaviors {
+        aml: alpha_mods_l {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALPHA_MT_L";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;
+            global-quick-tap-ms = <100>;
+        };
+        asl: alpha_shift_l {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALPHA_SFT_L";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_R THUMBS>;
+            hold-trigger-on-release;
+        };
+        amr: alpha_mods_r {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALPHA_MT_R";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
+            global-quick-tap-ms = <100>;
+        };
+        asr: alpha_shift_r {
+            compatible = "zmk,behavior-hold-tap";
+            label = "ALPHA_SFT_R";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_L THUMBS>;
+            hold-trigger-on-release;
+        };
+
+        // Swapper for smart alt+tab
+        swapper: swapper {
+            compatible = "zmk,behavior-tri-state";
+            label = "SWAPPER";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+            ignored-key-positions = <21>;
+        };
+    };
 		macros {
 				// sometimes my device thinks a modifier is being held down
 				// pressing all modifiers fixes it.

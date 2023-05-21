@@ -52,10 +52,5 @@ COMBO(rbrc,   &kp RBRC,    16 17, BASE, 40, 100)
 COMBO(rbkt,   &kp RBKT,    26 27, BASE, 40, 100)
 
 COMBO(esc,    &kp ESC,      3  4, BASE, 40, 100)
-
-
-#ifMOUSE_KEYS
-COMBO(mse_l,  &mo MSE,      31 32, BASE, 100,  0)
-#endif
     };
 };

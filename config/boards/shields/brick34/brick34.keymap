@@ -33,6 +33,19 @@
 #include "combos.dtsi"
 #include "mouse.dtsi"
 
+#define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
+    ZMK_BEHAVIOR(NAME, hold_tap, \
+        flavor = "balanced"; \
+        tapping-term-ms = <280>; \
+        quick-tap-ms = <QUICK_TAP_MS>; \
+        global-quick-tap-ms = <150>; \
+        bindings = <HOLD>, <TAP>; \
+        hold-trigger-key-positions = <TRIGGER_POS>; \
+        hold-trigger-on-release; \
+    )
+MAKE_HRM(hml, &kp, &kp, KEYS_R THUMBS)  // left-hand HRMs
+MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
+
 &mt {
   quick-tap-ms = <80>;
 //   global-quick-tap;
@@ -129,7 +142,7 @@
 // ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮   ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮
    	&kp Q            &kp W            &kp E            &kp R            &kp T                &kp Y       	  &kp U            &kp I       		&kp O       	 &kp P
 // ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤   ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤
-   	&mt LSHFT A      &aml LALT S      &aml LGUI D      &kp F            &kp G                &kp H       	  &kp J            &amr LGUI K  	&amr LALT L  	 &mt RSHFT SEMI
+   	&mt LSHFT A      &hml LALT S      &hml LGUI D      &kp F            &kp G                &kp H       	  &kp J            &hmr LGUI K  	&hmr LALT L  	 &mt RSHFT SEMI
 // ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤   ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤
    	&mt LCTRL Z      &kp X            &kp C            &kp V            &kp B                &kp N       	  &mt MINUS M      &mt EQUAL COMMA  &mt EXCL DOT	 &mt RCTRL FSLH
 // ╰────────────────┴────────────────┴────────────────┼────────────────┼────────────────┤   ├────────────────┼────────────────┼────────────────┴────────────────┴────────────────╯
@@ -169,13 +182,13 @@
 			label = "PAD";
 			bindings = <
 // ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮   ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮
-    &kp ESC	         &kp N7	          &kp N8		   &kp N9	        &kp MINUS       	 &mwh SCROLL_LEFT &mwh SCROLL_DOWN &mkp MCLK 		&mwh SCROLL_UP 	 &mwh SCROLL_RIGHT
+    &kp ESC	         &kp N7	          &kp N8		   &kp N9	        &kp MINUS       	 &none            &none            &none 	        &none 	         &none
 // ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤   ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤
-    &mt LSHIFT TAB	 &kp N4	          &kp N5		   &kp N6	        &kp DOT 	    	 &none       	  &mmv MOVE_LEFT   &mmv MOVE_UP 	&mmv MOVE_RIGHT  &none
+    &mt LSHIFT TAB	 &kp N4	          &kp N5		   &kp N6	        &kp DOT 	    	 &none       	  U_MS_L           U_MS_U 	        U_MS_R           &none
 // ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤   ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤
-    &kp N0     		 &kp N1    	 	  &kp N2 		   &kp N3   		&kp EQUAL  	   		 &none         	  &mkp MB4         &mmv MOVE_DOWN   &mkp MB5      	 &none
+    &kp N0     		 &kp N1    	 	  &kp N2 		   &kp N3   		&kp EQUAL  	   		 &none         	  U_WH_D           U_MS_D           U_MS_R           &none
 // ╰────────────────┴────────────────┴────────────────┼────────────────┼────────────────┤   ├────────────────┼────────────────┼────────────────┴────────────────┴────────────────╯
-        	                                           &trans           &trans          	 &mkp LCLK     	  &mkp RCLK
+        	                                           &trans           &trans          	 U_BTN1     	  U_BTN2
 //                                                 	  ╰────────────────┴────────────────╯   ╰────────────────┴────────────────╯
             >;
 		};

@@ -25,6 +25,10 @@ COMBO(tab2,   &kp TAB,      1  2, BASE, 40, 100)
 COMBO(undo,   &kp LC(Z),   21 22, BASE, 40, 100)
 COMBO(esc,    &kp ESC,      3  4, BASE, 40, 100)
 
+COMBO(lalt,    &kp LALT,    1,  3, BASE, 25, 100)
+COMBO(lsft,    &kp LSHIFT, 11  13, BASE, 25, 100)
+COMBO(lctl,    &kp LCTRL,  21  23, BASE, 25, 100)
+
 COMBO(1,      &kp N1,       0 10, BASE, 40, 100)
 COMBO(2,      &kp N2,       1 11, BASE, 40, 100)
 COMBO(3,      &kp N3,       2 12, BASE, 40, 100)

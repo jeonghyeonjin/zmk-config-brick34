@@ -1,6 +1,6 @@
 include:
   - board: seeeduino_xiao_ble
-    shield: brick34_left nice_view
+    shield: brick34_left nice_view_adapter nice_view
   - board: seeeduino_xiao_ble
-    shield: brick34_right nice_view
+    shield: brick34_right nice_view_adapter nice_view
 # there is no settingsreset (needed) for the XIAO

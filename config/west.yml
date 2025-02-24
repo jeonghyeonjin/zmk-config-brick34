@@ -4,10 +4,12 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: urob
       url-base: https://github.com/urob
+    - name: niceviewflip
+      url-base: https://github.com/invrtd
   projects:
     - name: zmk
-      remote: urob
-      revision: main
+      remote: niceviewflip
+      revision: nive!view-180
       import: app/west.yml
   self:
     path: config

@@ -2,7 +2,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/mouse.h>
+// #include <dt-bindings/zmk/mouse.h>
 #ifdef EXTERNAL_POWER
 #    include <dt-bindings/zmk/ext_power.h>
 #endif
@@ -31,7 +31,7 @@
 #define QUICK_TAP_MS 175
 
 #include "combos.dtsi"
-#include "mouse.dtsi"
+// #include "mouse.dtsi"
 
 &mt {
   quick-tap-ms = <80>;
@@ -169,11 +169,11 @@
 // ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮   ╭────────────────┬────────────────┬────────────────┬────────────────┬────────────────╮
     &kp ESC	         &kp N7	          &kp N8		   &kp N9	        &kp MINUS       	 &none            &none            &none 	        &none 	         &none
 // ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤   ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤
-    &mt LSHIFT TAB	 &kp N4	          &kp N5		   &kp N6	        &kp DOT 	    	 &none       	  U_MS_L           U_MS_U 	        U_MS_R           &none
+    &mt LSHIFT TAB	 &kp N4	          &kp N5		   &kp N6	        &kp DOT 	    	 &none       	  &none            &none 	        &none            &none
 // ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤   ├────────────────┼────────────────┼────────────────┼────────────────┼────────────────┤
-    &kp N0     		 &kp N1    	 	  &kp N2 		   &kp N3   		&kp EQUAL  	   		 &none         	  U_WH_D           U_MS_D           U_WH_U           &none
+    &kp N0     		 &kp N1    	 	  &kp N2 		   &kp N3   		&kp EQUAL  	   		 &none         	  &none            &none            &none            &none
 // ╰────────────────┴────────────────┴────────────────┼────────────────┼────────────────┤   ├────────────────┼────────────────┼────────────────┴────────────────┴────────────────╯
-        	                                           &trans           &trans          	 U_BTN1     	  U_BTN2
+        	                                           &trans           &trans          	 &none      	  &none 
 //                                                 	  ╰────────────────┴────────────────╯   ╰────────────────┴────────────────╯
             >;
 		};

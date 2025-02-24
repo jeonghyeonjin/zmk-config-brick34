@@ -9,7 +9,7 @@ manifest:
   projects:
     - name: zmk
       remote: niceviewflip
-      revision: nive!view-180
+      revision: nice!view-180
       import: app/west.yml
   self:
     path: config

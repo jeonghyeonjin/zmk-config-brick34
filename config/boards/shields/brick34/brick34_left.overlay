@@ -1,6 +1,7 @@
 #include "brick34.dtsi"
 
 &kscan0 {
+	wakeup-source;
 	col-gpios
 		= <&gpio1 15 GPIO_ACTIVE_HIGH>   //Col0
 		, <&gpio1 14 GPIO_ACTIVE_HIGH>   //Col1

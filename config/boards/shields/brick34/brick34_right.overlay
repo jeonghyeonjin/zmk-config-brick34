@@ -5,6 +5,7 @@
 };
 
 &kscan0 {
+	wakeup-source;
 	col-gpios
 		= <&gpio1 11 GPIO_ACTIVE_HIGH>   //Col0
 		, <&gpio1 12 GPIO_ACTIVE_HIGH>   //Col1

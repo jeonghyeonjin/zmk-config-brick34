@@ -165,6 +165,18 @@
             ignore-modifiers;  // modifiers don't deactivate the layer
         };
 
+        caps_word_capslock: caps_word_capslock {
+            compatible = "zmk,behavior-caps-word";
+            label = "CAPS_WORD_CAPSLOCK";
+            #binding-cells = <0>;
+            disable-on-keys = <
+                SPACE TAB ENTER ESCAPE
+                COMMA DOT SEMI COLON QUESTION EXCLAMATION
+                SLASH BACKSLASH SINGLE_QUOTE DOUBLE_QUOTES GRAVE
+                LPAR RPAR LBKT RBKT LBRC RBRC LT GT
+            >;
+        };
+
         lt_num_word: lt_num_word {
             compatible = "zmk,behavior-hold-tap";
             label = "lt_num_word";

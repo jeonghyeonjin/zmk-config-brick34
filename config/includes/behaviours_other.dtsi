@@ -165,6 +165,19 @@
             ignore-modifiers;  // modifiers don't deactivate the layer
         };
 
+        num_word: num_word {
+            compatible = "zmk,behavior-caps-word";
+            label = "NUM_WORD";
+            #binding-cells = <0>;
+            layers = <NUM_WORD>;
+            continue-list = <
+                BACKSPACE DELETE DOT COMMA
+                SLASH ASTERISK PLUS MINUS EQUAL DOLLAR
+                RS(SPACE)
+            >;
+            ignore-modifiers;  // modifiers don't deactivate the layer
+        };
+
         caps_word_capslock: caps_word_capslock {
             compatible = "zmk,behavior-caps-word";
             label = "CAPS_WORD_CAPSLOCK";

@@ -1,7 +1,7 @@
-if SHIELD_CHOCOFI_LEFT
+if SHIELD_BRICK34_LEFT
 
 config ZMK_KEYBOARD_NAME
-	default "CHOCOFI"
+	default "BRICK34"
 
 config ZMK_SPLIT_BLE_ROLE_CENTRAL
 	default y
@@ -9,15 +9,15 @@ config ZMK_SPLIT_BLE_ROLE_CENTRAL
 endif
 
 
-if SHIELD_CHOCOFI_RIGHT
+if SHIELD_BRICK34_RIGHT
 
 config ZMK_KEYBOARD_NAME
-	default "CHOCOFI Right"
+	default "BRICK34 Right"
 	
 endif
 
 
-if SHIELD_CHOCOFI_LEFT || SHIELD_CHOCOFI_RIGHT
+if SHIELD_BRICK34_LEFT || SHIELD_BRICK34_RIGHT
 
 config ZMK_SPLIT
 	default y
@@ -29,8 +29,9 @@ config ZMK_DISPLAY
 
 if ZMK_DISPLAY
 
-config SPI
-	default y
+# SPI is automatically enabled in Zephyr 4.1
+# config SPI
+# 	default y
 
 config LS0XX
 	default y

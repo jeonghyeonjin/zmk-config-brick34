@@ -1,6 +1,6 @@
 file_format: "1"
-id: chocofi
-name: Chocofi
+id: brick34
+name: Brick34
 type: shield
 requires: [seeed_xiao]
 # exposes: [i2c_oled]
@@ -8,5 +8,5 @@ features:
   - keys
   - display
 siblings:
-  - chocofi_left
-  - chocofi_right
+  - brick34_left
+  - brick34_right

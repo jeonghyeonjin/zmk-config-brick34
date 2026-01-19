@@ -141,7 +141,7 @@
             compatible = "zmk,behavior-caps-word";
             label = "NAV_WORD";
             #binding-cells = <0>;
-            layers = <NAV_WORD>;
+            // layers = <NAV_WORD>;  // not available in ZMK v0.3
             continue-list = <
                 LEFT DOWN UP RIGHT
                 PG_UP PG_DN
@@ -154,7 +154,7 @@
             compatible = "zmk,behavior-caps-word";
             label = "sym_word";
             #binding-cells = <0>;
-            layers = <SYM_WORD>;
+            // layers = <SYM_WORD>;  // not available in ZMK v0.3
             continue-list = <
                 CARET AMPERSAND PLUS EQUAL MINUS SLASH PIPE
                 TILDE PERCENT UNDERSCORE EXCLAMATION DOLLAR SEMICOLON
@@ -169,7 +169,7 @@
             compatible = "zmk,behavior-caps-word";
             label = "NUM_WORD";
             #binding-cells = <0>;
-            layers = <NUM_WORD>;
+            // layers = <NUM_WORD>;  // not available in ZMK v0.3
             continue-list = <
                 BACKSPACE DELETE DOT COMMA
                 SLASH ASTERISK PLUS MINUS EQUAL DOLLAR
